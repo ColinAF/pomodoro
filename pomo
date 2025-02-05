@@ -1,0 +1,12 @@
+#!/bin/bash
+work_interval=$((25 * 60))
+break_interval=$((5 * 60))
+
+while true; do
+	time=$(date +"%I:%M%p")
+    printf "Pomodoro started at %s\n" "$time"
+    sleep $work_interval  
+    echo "Break time, take a 5-minute break"
+    sleep $break_interval
+done
+
