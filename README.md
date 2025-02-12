@@ -1,2 +1,2 @@
 # Pomodoro
-A bash implementation of a pomodoro timer. 
+Python implementation of a pomodoro timer. 
