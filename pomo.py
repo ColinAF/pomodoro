@@ -1,7 +1,6 @@
 import time
 import curses
 import threading
-import simpleaudio as sa
 
 # TODO
 # Increase font size
@@ -17,22 +16,7 @@ import simpleaudio as sa
 
 TIMES_UP = "Time's up!"
 
-def play_sound():
-    # The wave file must be in 16-bit PCM format
-    wave_obj = sa.WaveObject.from_wave_file("ding.wav")
-    play_obj = wave_obj.play()
-    play_obj.wait_done()
-
 def pomodoro_timer(stdscr, duration):
-    # Start the playback in a daemon thread (it'll exit with the main program)
-    sound_thread = threading.Thread(target=play_sound, daemon=True)
-    sound_thread.start() 
-   
-    # Start the playback in its own thread
-    #sound_thread = threading.Thread(target=play_sound)
-    #sound_thread.start()
-    #sound_thread.join()  # Wait for the sound to finish before proceeding
-    
     stdscr.clear()
     curses.curs_set(0)
    
